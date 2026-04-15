@@ -1,4 +1,23 @@
-# 메인 메뉴 루프
+import pymysql
+import sys
+
+# MariaDB 접속 정보
+DB_HOST = "192.168.100.20"
+DB_USER = "root"
+DB_PASS = "security"
+DB_PORT = 3306
+DB_NAME = "cju"
+
+conn = pymysql.connect(
+    host=DB_HOST,
+    user=DB_USER,
+    password=DB_PASS,
+    port=DB_PORT,
+    database=DB_NAME,
+    charset='utf8mb4',
+    cursorclass=pymysql.cursors.DictCursor
+)
+
 def main_menu():
     while True:
         print("\n--- [ 성적 관리 시스템 ] ---")
