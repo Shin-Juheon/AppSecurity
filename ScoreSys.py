@@ -36,7 +36,12 @@ def main_menu():
         elif choice == '2':
             select_one()
         elif choice == '3':
-            insert_member()
+            member_seq = input("학생 번호(seq) 입력: ")
+            subject = input("과목명 입력: ")
+            score = input("점수 입력: ")
+            term = input("학기 입력(예: 2026-1): ")
+            sql = "INSERT INTO member (id, pass, name) VALUES ('" + member_seq + "', '" + subject + "', '" + score + "', '" + term + "')"
+        
         elif choice == '4':
             delete_member()
         elif choice == '5':
